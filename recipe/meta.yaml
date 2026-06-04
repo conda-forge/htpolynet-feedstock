@@ -1,46 +1,52 @@
 {% set name = "htpolynet" %}
-{% set version = "1.0.9" %}
+{% set version = "2.1.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/htpolynet-{{ version }}.tar.gz
-  sha256: 36da81f4792dfc24665a36c24ff0145de627f9e614ea4ecdd04424f424868259
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/htpolynet-{{ version }}.tar.gz
+  sha256: a2a3ac6c4384f3683f5aacb08a40dd3c223a060ceb32dcf3d58155efa69b976a
 
 build:
   entry_points:
-    - htpolynet = HTPolyNet.driver:cli
+    - htpolynet = htpolynet.cli:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - numpy >=1.24
     - pyyaml >=6
     - requests >=2.28
     - pandas >=2
     - scipy >=1.10
     - parmed >=4
-    - networkx >=2.8
+    - networkx >=3.2
     - gputil >=1.4
     - matplotlib-base
+    - python-graphviz >=0.20
+    - graphviz
+    - rdkit >=2024.03
+    - setuptools
     - ambertools
 
 test:
   imports:
-    - HTPolyNet
+    - htpolynet
   commands:
     - pip check
     - htpolynet --help
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
