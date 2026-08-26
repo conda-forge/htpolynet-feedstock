@@ -44,31 +44,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `htpolynet` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install htpolynet
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install htpolynet
 ```
 
-It is possible to list all of the versions of `htpolynet` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add htpolynet
+# for installing globally
+pixi global install htpolynet
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `htpolynet` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search htpolynet --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search htpolynet --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search htpolynet --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -80,6 +122,8 @@ mamba repoquery whoneeds htpolynet --channel conda-forge
 # List dependencies of `htpolynet`:
 mamba repoquery depends htpolynet --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
