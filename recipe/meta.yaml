@@ -43,7 +43,14 @@ test:
   imports:
     - htpolynet
   commands:
-    - pip check
+    # No `pip check` here.  It inspects every installed distribution, and
+    # ambertools bundles several (fetkutils, ndfes, packmol-memgen, proprep,
+    # edgembar) whose metadata is unsatisfiable under current conda-forge
+    # pins -- missing netcdf4/pdb2pqr, and requirements of numpy<2 and
+    # biopython<1.86 against the numpy 2 and biopython 1.88 that get
+    # installed.  So it fails on their account and never on htpolynet's,
+    # which imports and runs cleanly.  It blocked every version bump from
+    # 2.2.0 through 2.4.0.
     - htpolynet --help
   requires:
     - python {{ python_min }}
@@ -51,9 +58,9 @@ test:
 
 about:
   summary: Automated MD System Builder for Amorphous Network Polymers
-  dev_url: https://github.com/AbramsGroup/HTPolyNet
-  home: https://github.com/AbramsGroup/HTPolyNet
-  doc_url: https://abramsgroup.github.io/HTPolyNet
+  dev_url: https://github.com/cameronabrams/htpolynet
+  home: https://github.com/cameronabrams/htpolynet
+  doc_url: https://htpolynet.readthedocs.io/
   license: MIT
   license_file: LICENSE
 
