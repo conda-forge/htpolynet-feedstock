@@ -3,15 +3,15 @@ About htpolynet-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/htpolynet-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/AbramsGroup/HTPolyNet
+Home: https://github.com/cameronabrams/htpolynet
 
 Package license: MIT
 
 Summary: Automated MD System Builder for Amorphous Network Polymers
 
-Development: https://github.com/AbramsGroup/HTPolyNet
+Development: https://github.com/cameronabrams/htpolynet
 
-Documentation: https://abramsgroup.github.io/HTPolyNet
+Documentation: https://htpolynet.readthedocs.io/
 
 Current build status
 ====================
