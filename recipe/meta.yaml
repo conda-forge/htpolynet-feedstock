@@ -1,5 +1,5 @@
 {% set name = "htpolynet" %}
-{% set version = "2.7.0" %}
+{% set version = "2.10.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/htpolynet-{{ version }}.tar.gz
-  sha256: 0a6d7f72a9d4732e1901bac5830d42782c111f700d8c20903453007286903db9
+  sha256: 9252cf0dd44d82508225a4d901ef5ce858ceb4404f038e9244f08c31d7e23a5f
 
 build:
   entry_points:
