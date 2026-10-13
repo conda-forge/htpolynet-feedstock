@@ -1,5 +1,5 @@
 {% set name = "htpolynet" %}
-{% set version = "2.7.0" %}
+{% set version = "2.15.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/htpolynet-{{ version }}.tar.gz
-  sha256: 0a6d7f72a9d4732e1901bac5830d42782c111f700d8c20903453007286903db9
+  sha256: 0cd168d98c9f4cd1d0f1d95e5f9866a5de0afbea180f7842735805e690ff7666
 
 build:
   entry_points:
@@ -31,12 +31,13 @@ requirements:
     - parmed >=4
     - networkx >=3.2
     - gputil >=1.4
-    - matplotlib-base
+    - matplotlib-base >=3.5
     - python-graphviz >=0.20
     - graphviz
     - rdkit >=2024.03
     - setuptools
     - ambertools
+    - ycleptic >=2.4.4
 
 test:
   imports:
